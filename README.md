@@ -6,6 +6,7 @@ None of the ones I could find did it in exactly the way I wanted, so I ended up 
 
 <img width="300" height="400" alt="output" src="https://github.com/user-attachments/assets/e5d68182-dcb7-407f-9db4-8335c5e8cce8" />
 
+Live at https://eshiman.github.io/ConwaysGame
 
 ## Credits/ How I did this
 * I used these tutorials to figure out what initial setup to use, as I rarely use HTML/CSS/JS
