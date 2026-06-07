@@ -1,0 +1,70 @@
+.grid {
+  display: inline-grid;
+  gap: 0rem;
+  grid-template-columns: 20rem auto; /* matches max-width on .grid-rules */
+}
+
+.grid-rules {
+  grid-column: 1;
+  grid-row: 2;
+  max-width: 20rem;
+}
+
+@media only screen and (max-width: 800px) {
+  #rules {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: auto;
+    /* collapse to single column */
+  }
+
+  .grid-title, .grid-canvas {
+    grid-column: 1;
+    /* reset both to column 1 */
+  }
+}
+
+.grid-title {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.grid-canvas {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.button-positioning {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 10px auto;
+}
+
+.button2-positioning {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+html, body {
+  background-color: #DFE5F7;
+  min-height: 100%;
+}
+
+:root:not([data-theme="dark"]) {
+  --pico-range-border-color: var(--pico-form-element-border-color);
+  --pico-range-thumb-active-color: var(--pico-range-thumb-color);
+}

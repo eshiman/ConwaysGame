@@ -1,15 +1,59 @@
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="en" data-theme="light">
+
+<head >
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="pico.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Conway's Game of Life</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <main class="container">
-      <h1>Conway's Game of Life</h1>
+
+        <div class="grid">
+            <div class="grid-rules" id="rules">
+                <h5 style="text-align:center">Rules: </h5>
+                <ol>
+                <li>Any <b>live</b> cell with <b>&lt 2 </b> live neighbours <b>dies</b>, as if by underpopulation. </li>
+                <li>Any <b>live</b> cell with <b>2 or 3</b> live neighbours <b>lives</b> on to the next generation. </li>
+                <li>Any <b>live</b> cell with <b>&gt 3</b> live neighbours <b>dies</b>, as if by overpopulation. </li>
+                <li>Any <b>dead</b> cell with exactly <b>3</b> live neighbours becomes a <b>live</b> cell, as if by reproduction.</li>
+
+                </ol>
+            </div>
+            <div class="grid-title">
+                <h1 class="center">Conway's Game of Life</h1>
+            </div>
+            <div class="grid-canvas">
+                <div class="center">
+                    <canvas style="border: 1px solid black;"></canvas>
+                </div>
+                <div class="button-positioning">
+                    <button onclick="play()" class="button" style="background-color:#99D6C9; border-color:#99D6C9">
+                        <img width="30px" height="30px" src="assets/play-svgrepo-com.svg" />
+                    </button>
+                    <button onclick="step_back()" class="button" style="background-color:#9999C3; border-color:#9999C3">
+                        <img width="30px" height="30px" src="assets/step-backward-svgrepo-com.svg" />
+                    </button>
+                    <button onclick="step()" class="button" style="background-color:#7B8CDE; border-color:#9999C3">
+                        <img width="30px" height="30px" src="assets/forward-step-svgrepo-com.svg" />
+                    </button>
+                    <button onclick="pause()" class="button" style="background-color:#4A6AD3; border-color:#7B8CDE;">
+                        <img width="30px" height="30px" src="assets/pause-svgrepo-com.svg" />
+                    </button>
+
+                </div>
+                <div class="button2-positioning">
+                    <h6>5</h6>
+                    <input id="size_toggle" type="range" value="15" min="5" max="25">
+                    <h6>25</h6>
+                </div>
+            </div>
+        </div>
     </main>
-  </body>
+    <script src="index.js"></script>
+</body>
 </html>
