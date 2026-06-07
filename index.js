@@ -9,6 +9,8 @@ var ROWS = Number(range_input.value);
 var resolution = canvas.width / COLS;
 var past_grids = []
 const past_grids_max = 500;
+var isDrawing = false;
+var last_drawn_cell = [-1, -1]
 
 function buildGrid() {
     // fill with null so that it is iterable
@@ -109,6 +111,22 @@ function pause() {
 
 canvas.addEventListener("mousedown", function (e) {
     flipClickedSquare(canvas, e);
+    isDrawing = true;
+});
+canvas.addEventListener("mousemove", (e) => {
+    if (!isDrawing) {
+        return;
+    }
+    let rect = canvas.getBoundingClientRect();
+    const current_coordinates = getCellFromCoordinates(e.clientX - rect.left, e.clientY - rect.top);
+    if (current_coordinates[0] === last_drawn_cell[0] && current_coordinates[1] === last_drawn_cell[1]) {
+        return;
+    }
+    flipClickedSquare(canvas, e);
+});
+canvas.addEventListener("mouseup", () => {
+    last_drawn_cell = [-1, -1]
+    isDrawing = false;
 });
 
 function flipClickedSquare(canvas, event) {
@@ -117,6 +135,7 @@ function flipClickedSquare(canvas, event) {
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
     let [col, row] = getCellFromCoordinates(x, y);
+    last_drawn_cell = [col, row];
     if (grid[col][row] === 1) {
         grid[col][row] = 0;
     } else if (grid[col][row] === 0) {
