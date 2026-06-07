@@ -4,6 +4,9 @@ I was looking for a version of Conway's Game of Life to present to some high sch
 
 None of the ones I could find did it in exactly the way I wanted, so I ended up implementing it myself.
 
+<img width="300" height="400" alt="output" src="https://github.com/user-attachments/assets/e5d68182-dcb7-407f-9db4-8335c5e8cce8" />
+
+
 ## Credits/ How I did this
 * I used these tutorials to figure out what initial setup to use, as I rarely use HTML/CSS/JS
 https://www.youtube.com/watch?v=Fv3U_xPnqlo
